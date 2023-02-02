@@ -29,5 +29,19 @@ def cashonhandcalc():
                 cash=int(day_cashonhand[day-1][1])- int(day_cashonhand[day][1])
                 # using if to check if the cash on hand on the current day is higher and if the difference is more than 0
                 if int(day_cashonhand[day][1]) > int(day_cashonhand[day-1][1]) and cash > 0:
+                    # return the cash surplus statement
                     return "CASH ON HAND ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                # checking if the cash on hand on the current day is more than that of the previous day
+                elif int(day_cashonhand[day][1]) < int(day_cashonhand[day-1][1]): 
+                    # assigning the day to the variable day_num 
+                    day_num = day_cashonhand[day][0]
+                    # appending the day and calculated cash on hand amount into the empty cash_deficit list
+                    cash_deficit.append([day_num,cash])
+                    # using a for loop to loop the day and amount data from the cash deficit list 
+                    for day, amount in cash_deficit : 
+                        # writing the cash on hand statement into the txt file 
+                        file.write(f"[CASH DEFICIT] DAY: {day}, AMOUNT: USD{amount}\n")
+cashonhandcalc()
+
+                   
             
