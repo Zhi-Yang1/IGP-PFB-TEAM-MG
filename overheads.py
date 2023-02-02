@@ -22,6 +22,17 @@ def overheadscalc():
                 highest_value = float(data[1])
                 # assigning the category name to the variable 
                 highest_category = data[0].upper()
+          # creating a txt file
+         fp_cwd = Path.cwd() / "summary_report.txt"
+         fp_cwd.touch()
+        #writing the statement of highest overhead into the txt file
+        with fp_cwd.open(mode="w", encoding="UTF-8") as file:
+                file.write(f'[HIGHEST OVERHEAD] {highest_category}: {highest_value}%\n')
+         
+overheadscalc()
+                
+               
+       
        
 
 
