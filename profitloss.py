@@ -25,6 +25,9 @@ def profitlosscalc():
         profit_deficit=[]
         # using a for loop to loop the data from the range of 1, length of the day_profit list 
         for day in range(1,len(day_profit)) :
+            netprofit= int(day_profit[day-1][1])-int(day_profit[day][1])
+            if int(day_profit[day][1])>int(day_profit[day-1][1])
+            return 
           
 
 
