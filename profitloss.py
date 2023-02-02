@@ -25,9 +25,24 @@ def profitlosscalc():
         profit_deficit=[]
         # using a for loop to loop the data from the range of 1, length of the day_profit list 
         for day in range(1,len(day_profit)) :
+            # calculating the net profit if the current day profit is more than the previous day 
             netprofit= int(day_profit[day-1][1])-int(day_profit[day][1])
-            if int(day_profit[day][1])>int(day_profit[day-1][1])
-            return 
+            # using if to check if the current day profit is higher than the previous day 
+            if int(day_profit[day][1])>int(day_profit[day-1][1]) and netprofit > 0: 
+                # return the statement if the if statement above is fulfilled 
+                return "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY" 
+            # checking if the profit of the current day is lower than that of the previous day 
+            elif if int(day_profit[day][1])>int(day_profit[day-1][1]) :
+                # assigning the day from the day_profit list to the day_num variable 
+                day_num = day_profit[day][0]
+                # appending the day and calculated net profit into the empty profit_deficit list
+                profit_deficit.append([day_num, netprofit])
+         # using a for loop to loop the data from the profit_deficit list 
+        for day, amount in profit_deficit : 
+            # writing the statement into the text file
+            file.write(f"[PROFIT DEFICIT] DAY: {day}, AMOUNT: USD{amount}\n")
+profitlosscalc()
+            
           
 
 
